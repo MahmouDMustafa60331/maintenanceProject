@@ -1,6 +1,6 @@
 package Messages;
 
-public class TaskAddedMobileMessage {
+public class TaskAddedMobileMessage implements TaskAdded{
 
 	public String prepareMessage(String placeHolders[]) {
 		// code to replace place holders of this type
