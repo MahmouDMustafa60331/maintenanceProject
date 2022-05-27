@@ -82,12 +82,12 @@ public class Course implements Subject{
 		msg = gateway.sendAddedTask().prepareMessage(placeholders);
 		if(gateway instanceof SMSGateway){
 			for (User User : usersForSMSNotification){
-				User.Update(msg);
+				User.update(msg);
 			}
 		}
 		else{
 			for (User User : usersForEmailNotification){
-				User.Update(msg);
+				User.update(msg);
 			}
 		}
 	}
