@@ -2,6 +2,7 @@ package Observers;
 import java.util.ArrayList;
 
 import Gateways.GatewayFactory;
+import Gateways.SMSGateway;
 import Users.User;
 
 public class Course implements Subject{
@@ -63,32 +64,6 @@ public class Course implements Subject{
 	
 	// AddExam, PostGrades, PostAnnouncement  will be the same 
 
-	/*private void notifyAllUsers(String[] placeholders) {
-		// notify users by email
-		TaskAddedEmailMessage msg = new TaskAddedEmailMessage();
-		String notification = msg.prepareMessage(placeholders);
-		
-		// open connection for Email gateway and do some configurations to the object
-		
-		EmailGateway emailGateway = new EmailGateway();
-		
-		
-		for (Professor professor : professorsForEmailNotification) {
-			professor.notifyProfessor(notification);
-			emailGateway.sendMessage(notification, professor.getEmail());
-		}
-		
-		for (TA ta : TAsForEmailNotification) {
-			ta.notifyTA(notification);
-			emailGateway.sendMessage(notification, ta.getEmail());
-		}
-		
-		for (Student student : studentsForSMSNotification) {
-			student.notifyStudent(notification);
-			emailGateway.sendMessage(notification, student.getEmail());
-		}
-	}*/
-
 	@Override
 	public void subscribeUserEmailNotification(User user) {
 		usersForEmailNotification.add(user);
@@ -105,13 +80,15 @@ public class Course implements Subject{
 	public void notifyAllUsers(String[] placeholders) {
 		String msg;
 		msg = Gateway.sendAddedTask().prepareMessage(placeholders);
-		for (User User : usersForSMSNotification){
-			User.Update(msg);
+		if(Gateway instanceof SMSGateway){
+			for (User User : usersForSMSNotification){
+				User.Update(msg);
+			}
 		}
-		
+		else{
+			for (User User : usersForEmailNotification){
+				User.Update(msg);
+			}
+		}
 	}
-	
-	
-	
-	
 }
