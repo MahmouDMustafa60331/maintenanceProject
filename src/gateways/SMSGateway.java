@@ -1,11 +1,11 @@
 package gateways;
 
-import Messages.DailyNews;
-import Messages.DailyNewsMobileMessage;
-import Messages.GradesAnnouncement;
-import Messages.GradesAnnouncementMobileMessage;
-import Messages.TaskAdded;
-import Messages.TaskAddedMobileMessage;
+import messages.DailyNews;
+import messages.DailyNewsMobileMessage;
+import messages.GradesAnnouncement;
+import messages.GradesAnnouncementMobileMessage;
+import messages.TaskAdded;
+import messages.TaskAddedMobileMessage;
 
 public class SMSGateway implements GatewayFactory{
 

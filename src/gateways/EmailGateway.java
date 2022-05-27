@@ -1,11 +1,11 @@
 package gateways;
 
-import Messages.DailyNews;
-import Messages.DailyNewsEmailMessage;
-import Messages.GradesAnnouncement;
-import Messages.GradesAnnouncementEmailMessage;
-import Messages.TaskAdded;
-import Messages.TaskAddedEmailMessage;
+import messages.DailyNews;
+import messages.DailyNewsEmailMessage;
+import messages.GradesAnnouncement;
+import messages.GradesAnnouncementEmailMessage;
+import messages.TaskAdded;
+import messages.TaskAddedEmailMessage;
 
 public class EmailGateway implements GatewayFactory{
 
