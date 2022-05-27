@@ -1,4 +1,4 @@
-package Observers;
+package observers;
 import java.util.ArrayList;
 
 import Users.User;

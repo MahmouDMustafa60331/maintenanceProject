@@ -1,4 +1,4 @@
-package Users;
+package users;
 
 public class Student extends User{
 	int Id;

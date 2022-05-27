@@ -1,4 +1,4 @@
-package Users;
+package users;
 
 public class TA extends User {
 	String department;
