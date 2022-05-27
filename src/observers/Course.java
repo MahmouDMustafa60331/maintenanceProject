@@ -16,7 +16,7 @@ public class Course implements Subject{
 	ArrayList<User> usersForEmailNotification;
 	ArrayList<User> usersForSMSNotification;
 
-	GatewayFactory Gateway;
+	GatewayFactory gateway;
 	
 	public Course(String name, String code) {
 		super();
@@ -24,11 +24,11 @@ public class Course implements Subject{
 		this.code = code;
 		
 		announcements = new ArrayList<String>();
-		exams = new ArrayList<String>();
-		grades = new ArrayList<String>();
+		exams = new ArrayList<>();
+		grades = new ArrayList<>();
 		
-		usersForEmailNotification = new ArrayList<User>();
-		usersForSMSNotification = new ArrayList<User>();
+		usersForEmailNotification = new ArrayList<>();
+		usersForSMSNotification = new ArrayList<>();
 
 	}
 
@@ -79,8 +79,8 @@ public class Course implements Subject{
 	@Override
 	public void notifyAllUsers(String[] placeholders) {
 		String msg;
-		msg = Gateway.sendAddedTask().prepareMessage(placeholders);
-		if(Gateway instanceof SMSGateway){
+		msg = gateway.sendAddedTask().prepareMessage(placeholders);
+		if(gateway instanceof SMSGateway){
 			for (User User : usersForSMSNotification){
 				User.Update(msg);
 			}
