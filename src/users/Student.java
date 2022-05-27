@@ -16,7 +16,7 @@ public class Student extends User{
 		Id = id;
 	}
 	@Override
-	public void Update(String name) {
+	public void update(String name) {
 		// do some stuff
 	}
 	

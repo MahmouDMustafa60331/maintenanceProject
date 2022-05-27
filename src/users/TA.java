@@ -16,7 +16,7 @@ public class TA extends User {
 		this.department = department;
 	}
 	@Override
-	public void Update(String name) {
+	public void update(String name) {
 		// do some stuff
 	}
 }
