@@ -2,5 +2,5 @@ projectKey=Notifications
 serverUrl=http://localhost:9000
 serverVersion=9.4.0.54424
 dashboardUrl=http://localhost:9000/dashboard?id=Notifications
-ceTaskId=AYEHOBFkPyclOA3xxc46
-ceTaskUrl=http://localhost:9000/api/ce/task?id=AYEHOBFkPyclOA3xxc46
+ceTaskId=AYEHVx9DPyclOA3xxc47
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AYEHVx9DPyclOA3xxc47
