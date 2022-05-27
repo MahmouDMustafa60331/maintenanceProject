@@ -1,9 +1,9 @@
 package Observers;
 import java.util.ArrayList;
 
-import Gateways.GatewayFactory;
-import Gateways.SMSGateway;
 import Users.User;
+import gateways.GatewayFactory;
+import gateways.SMSGateway;
 
 public class Course implements Subject{
 	

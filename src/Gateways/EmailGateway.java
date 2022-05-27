@@ -1,4 +1,4 @@
-package Gateways;
+package gateways;
 
 import Messages.DailyNews;
 import Messages.DailyNewsEmailMessage;
@@ -11,20 +11,16 @@ public class EmailGateway implements GatewayFactory{
 
 	@Override
 	public DailyNews sendDailyNews() {
-		DailyNews DN = new DailyNewsEmailMessage();
-		return DN;
+		return new DailyNewsEmailMessage();
 	}
 
 	@Override
 	public GradesAnnouncement sendGradesAnnouncement() {
-		GradesAnnouncement GA = new GradesAnnouncementEmailMessage();
-		return GA;
+		return new GradesAnnouncementEmailMessage();
 	}
 
 	@Override
 	public TaskAdded sendAddedTask() {
-		TaskAdded TA = new TaskAddedEmailMessage();
-		return TA;
+		return new TaskAddedEmailMessage();
 	}
-	//solved
 }
