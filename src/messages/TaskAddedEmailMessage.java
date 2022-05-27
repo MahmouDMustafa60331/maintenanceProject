@@ -10,6 +10,6 @@ public class TaskAddedEmailMessage implements TaskAdded{
 	
 	@Override
 	public void addTeamDescription() {
-		
+		//code to add team description
 	}
 }

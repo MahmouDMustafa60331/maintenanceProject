@@ -2,10 +2,12 @@ package users;
 
 
 public abstract class User {
+	
     String name;
     String email;
 	String phoneNumber;
-    public User(String name, String email,String phoneNumber) {
+	
+    protected User(String name, String email,String phoneNumber) {
 		this.name = name;
 		this.email = email;
 		this.phoneNumber = phoneNumber;
@@ -29,7 +31,6 @@ public abstract class User {
 	public void setPhoneNumber(String phoneNumber) {
 		this.phoneNumber = phoneNumber;
 	}
-
 
 	public String getName() {
 		return name;

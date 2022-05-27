@@ -23,7 +23,7 @@ public class Course implements Subject{
 		this.name = name;
 		this.code = code;
 		
-		announcements = new ArrayList<String>();
+		announcements = new ArrayList<>();
 		exams = new ArrayList<>();
 		grades = new ArrayList<>();
 		
