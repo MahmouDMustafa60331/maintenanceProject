@@ -1,4 +1,4 @@
-package Gateways;
+package gateways;
 
 import Messages.DailyNews;
 import Messages.DailyNewsMobileMessage;
@@ -11,19 +11,16 @@ public class SMSGateway implements GatewayFactory{
 
 	@Override
 	public DailyNews sendDailyNews() {
-		DailyNews DN = new DailyNewsMobileMessage();
-		return DN;
+		return new DailyNewsMobileMessage();
 	}
 
 	@Override
 	public GradesAnnouncement sendGradesAnnouncement() {
-		GradesAnnouncement GA = new GradesAnnouncementMobileMessage();
-		return GA;
+		return new GradesAnnouncementMobileMessage();
 	}
 
 	@Override
 	public TaskAdded sendAddedTask() {
-		TaskAdded TA = new TaskAddedMobileMessage();
-		return TA;
+		return new TaskAddedMobileMessage();
 	}
-}//
+}
