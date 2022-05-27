@@ -1,12 +1,10 @@
+package Observers;
 import java.util.ArrayList;
 
-import Gateways.EmailGateway;
-import Messages.TaskAddedEmailMessage;
-import Users.Professor;
-import Users.Student;
-import Users.TA;
+import Gateways.GatewayFactory;
+import Users.User;
 
-public class Course {
+public class Course implements Subject{
 	
 	String name;
 	String code;
@@ -14,14 +12,10 @@ public class Course {
 	ArrayList<String> exams;
 	ArrayList<String> grades;
 	
-	ArrayList<Professor> professorsForEmailNotification;
-	ArrayList<Professor> professorsForSMSNotification;
-	
-	ArrayList<TA> TAsForEmailNotification;
-	ArrayList<TA> TAsForSMSNotification;
-	
-	ArrayList<Student> studentsForEmailNotification;
-	ArrayList<Student> studentsForSMSNotification;
+	ArrayList<User> usersForEmailNotification;
+	ArrayList<User> usersForSMSNotification;
+
+	GatewayFactory Gateway;
 	
 	public Course(String name, String code) {
 		super();
@@ -32,14 +26,9 @@ public class Course {
 		exams = new ArrayList<String>();
 		grades = new ArrayList<String>();
 		
-		professorsForEmailNotification = new ArrayList<Professor>();
-		professorsForSMSNotification = new ArrayList<Professor>();
-		
-		TAsForEmailNotification = new ArrayList<TA>();
-		TAsForSMSNotification = new ArrayList<TA>();
-		
-		studentsForEmailNotification = new ArrayList<Student>();
-		studentsForSMSNotification = new ArrayList<Student>();
+		usersForEmailNotification = new ArrayList<User>();
+		usersForSMSNotification = new ArrayList<User>();
+
 	}
 
 	public String getName() {
@@ -57,29 +46,9 @@ public class Course {
 	public void setCode(String code) {
 		this.code = code;
 	}
-	
-	public void subscribeProfessorForEmailNotification(Professor professor) {
-		professorsForEmailNotification.add(professor);
-	}
-	
-	public void subscribeProfessorForSMSNotification(Professor professor) {
-		professorsForSMSNotification.add(professor);
-	}
-	
-	public void subscribeTAForEmailNotification(TA ta) {
-		TAsForEmailNotification.add(ta);
-	}
-	
-	public void subscribeTAForSMSNotification(TA ta) {
-		TAsForSMSNotification.add(ta);
-	}
-	
-	public void subscribeStudentForEmailNotification(Student student) {
-		studentsForEmailNotification.add(student);
-	}
-	
-	public void subscribeStudentForSMSNotification(Student student) {
-		studentsForSMSNotification.add(student);
+
+	public void setGateway(GatewayFactory g) {
+		this.Gateway = g;
 	}
 	
 	
@@ -94,7 +63,7 @@ public class Course {
 	
 	// AddExam, PostGrades, PostAnnouncement  will be the same 
 
-	private void notifyAllUsers(String[] placeholders) {
+	/*private void notifyAllUsers(String[] placeholders) {
 		// notify users by email
 		TaskAddedEmailMessage msg = new TaskAddedEmailMessage();
 		String notification = msg.prepareMessage(placeholders);
@@ -118,6 +87,28 @@ public class Course {
 			student.notifyStudent(notification);
 			emailGateway.sendMessage(notification, student.getEmail());
 		}
+	}*/
+
+	@Override
+	public void subscribeUserEmailNotification(User user) {
+		usersForEmailNotification.add(user);
+		
+	}
+
+	@Override
+	public void subscribeUserSMSNotification(User user) {
+		usersForSMSNotification.add(user);
+		
+	}
+
+	@Override
+	public void notifyAllUsers(String[] placeholders) {
+		String msg;
+		msg = Gateway.sendAddedTask().prepareMessage(placeholders);
+		for (User User : usersForSMSNotification){
+			User.Update(msg);
+		}
+		
 	}
 	
 	
