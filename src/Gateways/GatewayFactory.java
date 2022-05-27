@@ -1,4 +1,4 @@
-package Gateways;
+package gateways;
 
 import Messages.DailyNews;
 import Messages.GradesAnnouncement;
