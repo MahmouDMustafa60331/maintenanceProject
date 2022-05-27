@@ -49,7 +49,7 @@ public class Course implements Subject{
 	}
 
 	public void setGateway(GatewayFactory g) {
-		this.Gateway = g;
+		this.gateway = g;
 	}
 	
 	

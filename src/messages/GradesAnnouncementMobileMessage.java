@@ -2,7 +2,7 @@ package messages;
 
 public class GradesAnnouncementMobileMessage implements GradesAnnouncement{
 
-	public String prepareMessage(String placeHolders[]) {
+	public String prepareMessage(String []placeHolders) {
 		// code to replace place holders of this type
 		return "";
 	}
