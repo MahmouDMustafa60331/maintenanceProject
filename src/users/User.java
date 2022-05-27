@@ -37,7 +37,7 @@ public abstract class User {
 	public void setName(String name) {
 		this.name = name;
 	}
-    public void Update(String name) {
+    public void update(String name) {
 		
 	}
 }

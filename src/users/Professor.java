@@ -6,13 +6,13 @@ public class Professor extends User {
 
 	String department;
 	Date hirringDate;
-	String PhDTopic;
+	String phDTopic;
 	
 	public Professor( String department, Date hirringDate, String phDTopic , String name, String email,String phoneNumber) {
 		super(name ,email,phoneNumber);
 		this.department = department;
 		this.hirringDate = hirringDate;
-		PhDTopic = phDTopic;
+		this.phDTopic = phDTopic;
 		
 		}
 	
@@ -33,14 +33,14 @@ public class Professor extends User {
 	}
 	
 	public String getPhDTopic() {
-		return PhDTopic;
+		return phDTopic;
 	}
 	
 	public void setPhDTopic(String phDTopic) {
-		PhDTopic = phDTopic;
+		this.phDTopic = phDTopic;
 	}
 	@Override
-	public void Update(String name) {
+	public void update(String name) {
 		// do some stuff
 	}
 	
