@@ -5,7 +5,7 @@ public abstract class User {
     String name;
     String email;
 	String phoneNumber;
-	String department;
+	
     public User(String name, String email,String phoneNumber) {
 		this.name = name;
 		this.email = email;
@@ -30,15 +30,6 @@ public abstract class User {
 	public void setPhoneNumber(String phoneNumber) {
 		this.phoneNumber = phoneNumber;
 	}
-
-	public String getDepartment() {
-		return department;
-	}
-
-	public void setDepartment(String department) {
-		this.department = department;
-	}
-
 
 	public String getName() {
 		return name;
