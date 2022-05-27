@@ -1,19 +1,19 @@
 package users;
 
 public class Student extends User{
-	int Id;
+	int id;
 
 	public Student(String name, int id, String email, String phoneNumber) {
 		super(name,email,phoneNumber);
-		Id = id;	
+		this.id = id;	
 	}
 	
 	public int getId() {
-		return Id;
+		return this.id;
 	}
 
 	public void setId(int id) {
-		Id = id;
+		this.id = id;
 	}
 	@Override
 	public void update(String name) {
