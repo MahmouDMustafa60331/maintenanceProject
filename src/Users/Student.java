@@ -7,7 +7,7 @@ public class Student extends User{
 		super(name,email,phoneNumber);
 		Id = id;	
 	}
-
+	
 	public int getId() {
 		return Id;
 	}
@@ -15,7 +15,7 @@ public class Student extends User{
 	public void setId(int id) {
 		Id = id;
 	}
-
+	@Override
 	public void Update(String name) {
 		// do some stuff
 	}
