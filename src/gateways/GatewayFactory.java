@@ -1,8 +1,8 @@
 package gateways;
 
-import Messages.DailyNews;
-import Messages.GradesAnnouncement;
-import Messages.TaskAdded;
+import messages.DailyNews;
+import messages.GradesAnnouncement;
+import messages.TaskAdded;
 
 public interface GatewayFactory {
     public DailyNews sendDailyNews();
